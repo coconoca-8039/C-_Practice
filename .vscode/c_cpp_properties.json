@@ -3,8 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/Users/yamazakiyuito/Desktop/C++_Practice/C-_Practice/includes"
+                "${workspaceFolder}/**"
             ],
             "defines": [],
             "macFrameworkPath": [

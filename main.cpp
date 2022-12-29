@@ -5,19 +5,56 @@
 //run code
 
 #include <iostream>
-#include "header1.cpp"
+#include "student_header.cpp"
+#include "student.cpp"
+
 
 using namespace std;  //名前空間
 
 int main(int argc, char** argv){
-    Car car;
-    car.speed = 100;  //メンバ変数への代入
-    car.drive(1.5);  //メンバ関数の利用 -> car.cpp
+    Student s[2];  //インスタンスを生成
+    
+    for (int i = 0; i < 2; i++){
 
-    Car taxi;
-    taxi.speed = 120;
-    taxi.drive(2);
+        cout << "---生徒" << (i + 1) << "の情報の入力---" << endl;
 
+        string name, cls;  //名前とクラスの宣言
+        int age, grade;  //年齢と学年の宣言
+
+        cout << "名前:";
+        cin >> name; 
+        cout << "年齢:";
+        cin >> age;
+        cout << "学年:";
+        cin >> grade;
+        cout << "クラス:";
+        cin >> cls;
+
+        //セッターに値を設定
+        //メンバ関数を呼び出している
+        s[i].setName(name);
+        s[i].setAge(age);
+        s[i].setGrade(grade);
+        s[i].setCls(cls);
+
+    }
+
+    //入力情報の確認
+    for (int i = 0; i < 2;i++){
+        cout << "----入力情報の確認----" << endl;
+        cout << "名前:" << s[i].getName()  << endl;
+        cout << "年齢:" << s[i].getAge() << endl;
+        cout << "学年:" << s[i].getGrade() << endl;
+        cout << "クラス:" << s[i].getCls() << endl;
+        cout << endl;
+
+    }
+
+    //情報の表示
+    for(int i = 0; i < 2; i++){
+        s[i].showInformation();
+    }
+    
     return 0;
-}
 
+}
